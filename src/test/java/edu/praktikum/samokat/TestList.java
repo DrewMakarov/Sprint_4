@@ -18,7 +18,7 @@ import static org.junit.Assert.assertEquals;
 @RunWith(Parameterized.class)
 public class TestList {
     private WebDriver driver;
-    HomePage HomePage;
+    HomePage homePage;
     private final String text;
     private final int index;
 
@@ -49,15 +49,15 @@ public class TestList {
 
         driver.get("https://qa-scooter.praktikum-services.ru/");
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-        HomePage = new HomePage(driver);
-        HomePage.clickCookie();
+        homePage = new HomePage(driver);
+        homePage.clickCookie();
     }
 
     @Test
     public void checkOneQuestion() {
-        HomePage.scrollToQuestionList();
-        HomePage.clickQuestions(index);
-        assertEquals("Текст отличается", text, HomePage.getAnswer(index));
+        homePage.scrollToQuestionList();
+        homePage.clickQuestions(index);
+        assertEquals("Текст отличается", text, homePage.getAnswer(index));
     }
 
     @After

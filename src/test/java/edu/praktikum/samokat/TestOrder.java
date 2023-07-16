@@ -44,6 +44,7 @@ public class TestOrder {
     public static Object[] getInfo() {
         return new Object[][]{
                 {true, "Самокат", "Петрович", "Кремль 1", "1", "74957397000", 1, "хочу самокат", "black"},
+                {false, "трактор", "Петрович", "Кремль 2", "2", "74957397123", 2, "хочу трактор", "grey"},
         };
     }
 
@@ -73,7 +74,7 @@ public class TestOrder {
         NewOrder.setCommentField(yourComment);
         NewOrder.clickOrderButtonInOrder();
         NewOrder.clickYesButton();
-        NewOrder.confirmOrderInfo();
+        NewOrder.checkOrderInfo();
     }
 
     @After
